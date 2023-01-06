@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=oAmHpQAe9DI&ab_channel=EmileyPalmquist
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -11,6 +13,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+function formatWord(word){
+  return word.charAt(0).toUpperCase() + word.slice(1)
 }
+
+function formatTutorial(element){
+  let arry = element.split(" ");
+  return arry.map(formatWord).join(" ")
+}
+
+const titleCased = () => {
+  let formattedArray = tutorials.map(formatTutorial);
+  return formattedArray;
+}
+
+// console.log(titleCased())
